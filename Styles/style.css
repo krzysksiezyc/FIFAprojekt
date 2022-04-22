@@ -1,0 +1,225 @@
+html, body{
+    background-color: whitesmoke; 
+    color: #19247c;
+    font-family: Arial, Helvetica, sans-serif;  
+}
+
+.container{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-template-rows: 10% 90%;
+    grid-template-areas: 
+    "moon-item menu"
+    "nav content"
+}
+
+.menu{
+    grid-area: menu;
+    background-image: url("pilka2.jpg");
+    height: 100px;
+    left: 100px;
+}
+
+.nav{
+    grid-area: nav;
+    background-color:  #667292; 
+    position: fixed;
+    left: 0 ;
+    top : 150px ;
+    height: 150vh; 
+    width: 150px;
+}
+
+.przyciski{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.content{
+    grid-area: content;
+}
+
+.footer{
+  flex-shrink: 0;
+  color: #bc5a45;
+  font-size: 14px;
+}
+
+.title{
+    font-size: 48px;
+    color:#1f0b25;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.nav-side{
+    font-size: 20px;
+    float:left;
+    padding: 20px;
+    text-decoration: none;
+    color:#1f0b25;
+}
+
+.nav-menu{
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+
+}
+
+img{
+  border-radius: 10px;
+  opacity: 0.9;
+  width:  300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+}
+
+.text{
+  display: block;
+  width: 1000px;
+  height: 100px;
+  font-size: 15px;
+  text-align: center;
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.image-content{
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+a:link {
+  color: #19247c;
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  color: #bc5a45;
+  text-decoration: none;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+  text-decoration: none;
+}
+
+
+/* KOD KSIEZYCA */
+
+.moon-item{
+    display: flex;
+    grid-area: moon-item;
+}
+
+.moon {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    background-color: #fff;
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+  }
+  .moon::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #222;
+    width: 50%;
+    height: 100%;
+    -webkit-animation: flip 2s 1s steps(2) infinite alternate;
+            animation: flip 2s 1s steps(2) infinite alternate;
+  }
+  
+  .disc {
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+    -webkit-animation: rotate 4s linear infinite;
+            animation: rotate 4s linear infinite;
+  }
+  .disc::before, .disc::after {
+    content: " ";
+    display: block;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: -webkit-transform 4s;
+    transition: transform 4s;
+    transition: transform 4s, -webkit-transform 4s;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+  }
+  .disc::before {
+    background-color: #222;
+  }
+  .disc::after {
+    background-color: #fff;
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+  
+  @-webkit-keyframes rotate {
+    0% {
+      -webkit-transform: rotateY(0deg);
+              transform: rotateY(0deg);
+    }
+    100% {
+      -webkit-transform: rotateY(360deg);
+              transform: rotateY(360deg);
+    }
+  }
+  
+  @keyframes rotate {
+    0% {
+      -webkit-transform: rotateY(0deg);
+              transform: rotateY(0deg);
+    }
+    100% {
+      -webkit-transform: rotateY(360deg);
+              transform: rotateY(360deg);
+    }
+  }
+  @-webkit-keyframes flip {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+  @keyframes flip {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: 100%;
+    }
+  }
